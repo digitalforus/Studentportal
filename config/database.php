@@ -2,6 +2,8 @@
 
 return [
 
+    $dbopts = parse_url(getenv('CLEARDB_DATABASE_URL'));
+
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -13,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'heroku_cleardb_mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -76,6 +78,21 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
         ],
+
+        'heroku_cleardb_mysql' => array(
+                'driver'   => 'mysql',
+                'username' => $dbopts["user"],
+                'password' => $dbopts["pass"],
+                'host' => $dbopts["host"],
+                'port' => $dbopts["port"],
+                'database' => ltrim($dbopts["path"],'/'),
+                'charset' => 'utf8mb4',
+                'collation' => 'utf8mb4_unicode_ci',
+                'prefix' => '',
+                'strict' => true,
+                'engine' => null,
+            ),
+
 
     ],
 

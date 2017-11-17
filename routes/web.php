@@ -15,12 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/test', function () {
-    return view('test');
-})->name('test');
 
-
-Route::get('/dashboard2', 'Student\StudentController@show2');
 //--------------------------Student--------------------------------------------------------
 //Student Routes...
 Route::get('/dashboard', 'Student\StudentController@show');
