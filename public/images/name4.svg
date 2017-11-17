@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="40 10 220 80">
+  <defs>
+    <style>
+
+      @import url('https://fonts.googleapis.com/css?family=Bungee|Slabo+27px');
+
+      .cls-1 {
+        font-size: 66.667px;
+        font-family: 'Slabo 27px', serif;
+      }
+
+      .cls-1, .cls-2 {
+        margin-top: 70px;
+        fill: #c00;
+      }
+
+      .cls-2 {
+        font-size: 28.5px;
+        font-family: "Franklin Gothic Demi";
+        font-style: italic;
+      }
+    </style>
+  </defs>
+  <text id="fec" class="cls-1" x="67" y="74">FEC</text>
+  <text id="unilag" class="cls-2" x="167" y="61">unilag</text>
+</svg>
