@@ -87,7 +87,7 @@ return [
                 'port' => $dbopts["port"],
                 'database' => ltrim($dbopts["path"],'/'),
                 'charset' => 'utf8',
-                'collation' => 'utf8',
+                'collation' => 'utf8_unicode_ci',
                 'prefix' => '',
                 'strict' => true,
                 'engine' => null,
