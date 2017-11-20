@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => 'intense-spire-64762.herokuapp.com',
+        'secret' => 'key-941cf79fffb496dfe5b183416d802cb0',
     ],
 
     'ses' => [
