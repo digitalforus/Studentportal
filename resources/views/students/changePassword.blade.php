@@ -125,7 +125,7 @@
     }
 
     function showPopup(elnt) {
-        @if(($errors->has('old-password')) && ($errors->has('password')) && ($errors->has('password_confirmation')))
+        @if(($errors->has('old-password')) || ($errors->has('password')) || ($errors->has('password_confirmation')))
             elnt.style.display = 'block';
         @endif
     }

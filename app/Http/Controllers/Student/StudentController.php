@@ -17,11 +17,6 @@ class StudentController extends Controller
 
     }
 
-    public function show2()
-    {
-        dd("hi");
-    }
-
     public function show()
     {
     	$student = Auth::guard('student')->user();
