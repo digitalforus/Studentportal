@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://intense-spire-64762.herokuapp.com'),
 
     /*
     |--------------------------------------------------------------------------

@@ -1,9 +1,10 @@
 <?php
 
+ $dbopts = parse_url(getenv('CLEARDB_DATABASE_URL'));
+
 return [
 
-    $dbopts = parse_url(getenv('CLEARDB_DATABASE_URL'));
-
+   
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -39,14 +40,13 @@ return [
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
         ],
-
-        'mysql' => [
+ 'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'us-cdbr-iron-east-05.cleardb.net'),
+            'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'heroku_bb91354716fda2b'),
-            'username' => env('DB_USERNAME', 'b7b04180819290'),
-            'password' => env('DB_PASSWORD', 'e93dcac7'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
@@ -86,7 +86,7 @@ return [
                 'host' => $dbopts["host"],
                 'port' => $dbopts["port"],
                 'database' => ltrim($dbopts["path"],'/'),
-                'charset' => 'utf8mb4',
+                'charset' => 'utf8',
                 'collation' => 'utf8mb4_unicode_ci',
                 'prefix' => '',
                 'strict' => true,
