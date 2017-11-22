@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
+use App\Events\StudentRegistered;
 use App\Mail\StudentWelcome;
 use Auth;
 
@@ -102,6 +103,8 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
 
         $this->guard()->login($user);
+
+        event(new StudentRegistered($user));
 
         \Mail::to($user)->send(new StudentWelcome($user));
 

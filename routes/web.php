@@ -15,7 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('test_email', function(){
+	\Mail::raw('Sending emails with Mailgun and Laravel is easy!', function($message)
+	{
+		$message->subject('Mailgun and Laravel are awesome!');
+		$message->from('no-reply@website_name.com', 'Website Name');
+		$message->to('blessyn2hope@gmail.com');
+	});
 
+	return 'mail sent';
+});
 //--------------------------Student--------------------------------------------------------
 //Student Routes...
 Route::get('/dashboard', 'Student\StudentController@show');
@@ -38,3 +47,22 @@ Route::post('student/password/email', 'Student\Auth\ForgotPasswordController@sen
 Route::get('student/password/reset/{token}', 'Student\Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('student/password/reset', 'Student\Auth\ResetPasswordController@reset');
 
+
+//----------------------------------ADMIN----------------------------------------------------
+//Student Routes...
+Route::get('admin/dashboard', 'Admin\AdminController@show');
+Route::get('admin/dashboard/student/{student}', 'Admin\AdminController@student');
+Route::get('admin/dashboard/student/delete/{student}', 'Admin\AdminController@studentDelete');
+Route::post('admin/dashboard/student/update/{student}', 'Admin\AdminController@studentUpdate');
+Route::post('admin/password/{admin}', 'Admin\AdminController@updatePassword');
+
+//Login Routes...
+Route::get('admin/login', 'Admin\Auth\LoginController@showLoginForm');
+Route::post('admin/login', 'Admin\Auth\LoginController@login');
+Route::get('admin/logout', 'Admin\Auth\LoginController@logout');
+
+// Password Reset Routes...
+Route::get('admin/password/reset', 'Admin\Auth\ForgotPasswordController@showLinkRequestForm');
+Route::post('password/email', 'Admin\Auth\ForgotPasswordController@sendResetLinkEmail');
+Route::get('student/password/reset/{token}', 'Student\Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('student/password/reset', 'Student\Auth\ResetPasswordController@reset');
