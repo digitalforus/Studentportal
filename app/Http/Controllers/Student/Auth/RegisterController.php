@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
-use StudentRegistered;
+use App\Events\StudentRegistered;
 use App\Mail\StudentWelcome;
 use Auth;
 
