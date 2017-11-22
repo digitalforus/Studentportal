@@ -45,6 +45,7 @@ class StudentController extends Controller
         $student->surname = Request('surname');
         $student->firstName = Request('firstName');
         $student->userName = Request('userName');
+        $student->level = Request('level');
         $student->email= Request('email');
         $student->phoneNo = Request('phoneNo');
 
