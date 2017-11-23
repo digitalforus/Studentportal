@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => 'sandboxb635d7c3ad494b3f853ca4c25808a903.mailgun.org',
-        'secret' => 'key-941cf79fffb496dfe5b183416d802cb0',
+        'domain' => 'test.fecunilag.com',
+        'secret' => 'key-5d3266f7b0dab1a2a7182952031d851c',
     ],
 
     'ses' => [
