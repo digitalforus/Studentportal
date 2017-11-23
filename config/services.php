@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => 'test.fecunilag.com',
-        'secret' => 'key-5d3266f7b0dab1a2a7182952031d851c',
+        'domain' => '',
+        'secret' => '',
     ],
 
     'ses' => [
